@@ -1,4 +1,4 @@
-package ch.zhaw.mdp;
+package test.java.ch.zhaw.mdp;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
