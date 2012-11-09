@@ -1,25 +1,20 @@
 package ch.zhaw;
 
-import ch.zhaw.LogImpl.ErrorLog;
-import ch.zhaw.LogImpl.NoLog;
-import ch.zhaw.LogImpl.SimpleLog;
-
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-    	Logger.setLog(new SimpleLog());
-    	Logger.info("Dies ist ein Infotext");
-    	Logger.error("Dies ist ein Errortext");
-    	Logger.setLog(new NoLog());
-    	Logger.info("Dies ist ein Infotext");
-    	Logger.error("Dies ist ein Errortext");
-    	Logger.setLog(new ErrorLog());
-    	Logger.info("Dies ist ein Infotext");
-    	Logger.error("Dies ist ein Errortext");
+public class App {
+	
+	private static Init init;
+	
+    public static void main( String[] args ) {
+    	start();
+    }
+    
+    public static void start() {
+    	init = new Init();
+    }
+    
+    public static void restart() {
+    	init.closeWindow();
+    	init = null;
+    	init = new Init();
     }
 }
