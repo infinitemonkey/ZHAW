@@ -1,4 +1,5 @@
-package ch.zhaw;
+package ch.zhaw.log;
+
 
 public class Logger {
 

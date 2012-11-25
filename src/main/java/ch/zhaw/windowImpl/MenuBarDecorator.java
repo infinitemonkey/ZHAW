@@ -1,4 +1,4 @@
-package ch.zhaw;
+package ch.zhaw.windowImpl;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +8,11 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-class MenuBarDecorator extends WindowDecorator {
+import ch.zhaw.App;
+import ch.zhaw.log.Logger;
+import ch.zhaw.window.IWindow;
+
+public class MenuBarDecorator extends WindowDecorator {
     
 	public MenuBarDecorator (IWindow decoratedWindow) {
         super(decoratedWindow);

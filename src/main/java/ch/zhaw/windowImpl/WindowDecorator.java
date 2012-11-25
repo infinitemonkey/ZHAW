@@ -1,4 +1,7 @@
-package ch.zhaw;
+package ch.zhaw.windowImpl;
+
+import ch.zhaw.window.IWindow;
+
 
 public abstract class WindowDecorator implements IWindow {
 

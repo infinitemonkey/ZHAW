@@ -1,4 +1,4 @@
-package ch.zhaw;
+package ch.zhaw.window;
 
 import javax.swing.JFrame;
 

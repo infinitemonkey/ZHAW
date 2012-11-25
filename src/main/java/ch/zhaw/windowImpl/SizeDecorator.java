@@ -1,6 +1,9 @@
-package ch.zhaw;
+package ch.zhaw.windowImpl;
 
 import javax.swing.JFrame;
+
+import ch.zhaw.log.Logger;
+import ch.zhaw.window.IWindow;
 
 public class SizeDecorator extends WindowDecorator {
    
@@ -17,7 +20,7 @@ public class SizeDecorator extends WindowDecorator {
  
     private void drawSize() {
     	Logger.info("SimpleWindow: SizeDecorator: drawSize()");
-    	decoratedWindow.getFrame().setBounds(100, 100, 600, 400);
+    	decoratedWindow.getFrame().setBounds(100, 100, 800, 600);
     	decoratedWindow.getFrame().invalidate();
     }
  
