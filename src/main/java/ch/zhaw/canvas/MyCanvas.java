@@ -6,6 +6,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import ch.zhaw.windowImpl.PropertiesDialog;
+
 public class MyCanvas extends Canvas implements ICanvas {
 	
 	private static final long serialVersionUID = 1L;
@@ -49,15 +51,18 @@ public class MyCanvas extends Canvas implements ICanvas {
 		
 		@Override
 		public void mouseClicked(MouseEvent event) {
-			if (pause) {
+			//if (pause) {
 				int x = event.getPoint().x;
 				int y = event.getPoint().y;
 				for (IObject obj : objects) {
 					if ((x > obj.getPosX() && x < obj.getPosX()+obj.getDurchmesser()) && (y > obj.getPosY() && y < obj.getPosY()+obj.getDurchmesser())) {
 						((MyObject) obj).onClick(obj);
 					}
+					else {
+						new PropertiesDialog(objects, x, y, 10);
+					}
 			    }
-			}
+			//}
 		}
 
 		@Override

@@ -1,7 +1,9 @@
 package ch.zhaw.windowImpl;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 
 import javax.swing.*;
 
@@ -15,6 +17,7 @@ public class MainWindow implements IWindow {
 	private JFrame frame;
 	private JPanel canvasPanel;
 	private ICanvas canvas;
+	private JTextArea infoTextArea;
 	
 	public MainWindow(ICanvas canvas) {
 		Logger.info("INIT: SimpleWindow");
@@ -24,19 +27,21 @@ public class MainWindow implements IWindow {
 	
 	private void drawWindow() {
 		frame = new JFrame("Physikalische Simulation");
+		frame.setSize(500, 700);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		/* Setzt das Layout vom Frame und vom Panel */
-		frame.setLayout(new BorderLayout(800,600));
+		frame.setLayout(new BorderLayout());
+
 		canvasPanel = new JPanel();
-		canvasPanel.setLayout(new BorderLayout(400,200));
-		//canvas.addMouseListener(canvas);
-	     
-	    /* Hier k�nnen wir dan unser Canvas auf das Panel platzieren */
+		canvasPanel.setLayout(new BorderLayout());
+		canvasPanel.setSize(500, 500);
+		canvasPanel.setBackground(Color.CYAN);
 		canvasPanel.add((Component) canvas, BorderLayout.CENTER);
-	    /* und nat�rlich noch das Panel auf das Frame */
+		
+		infoTextArea = new JTextArea();
+		infoTextArea.setSize(500, 200);
+		
 	    frame.add(canvasPanel, BorderLayout.CENTER);
-	     
+	    frame.add(infoTextArea, BorderLayout.SOUTH);     
 	}
 		
 	@Override

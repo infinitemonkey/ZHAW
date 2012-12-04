@@ -13,6 +13,12 @@ public class MyObject implements IObject, ObjClickListener {
 		
 	}
 	
+	public MyObject(int posX, int posY, int durchmesser) {
+		this.posX = posX;
+		this.posY = posY;
+		this.durchmesser = durchmesser;
+	}
+	
 	public int getPosX() {
 		return posX;
 	}

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import ch.zhaw.log.Logger;
 
-public class CustomCanvas extends Canvas implements MouseListener {
+public class CustomCanvas extends Canvas implements MouseListener, ICanvas {
 	
 	private static final long serialVersionUID = 1L;
 	private boolean stop = false;
@@ -82,6 +82,24 @@ public class CustomCanvas extends Canvas implements MouseListener {
 
 	@Override
 	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addObject(IObject object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void start() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pause() {
 		// TODO Auto-generated method stub
 		
 	}

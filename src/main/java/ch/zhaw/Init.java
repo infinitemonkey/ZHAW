@@ -41,7 +41,7 @@ public class Init implements ObjListener{
 		decoratedWindow.getFrame().setVisible(true);
 		
 		
-		//canvas.start();
+		canvas.start();
 	}
 	
 	public void closeWindow() {
