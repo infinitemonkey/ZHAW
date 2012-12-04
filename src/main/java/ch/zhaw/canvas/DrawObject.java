@@ -7,8 +7,9 @@ public class DrawObject {
 	
 	private int radius = 10;
 
-	public DrawObject() {
-		
+	public DrawObject(int posX, int posY) {
+		this.posX = posX;
+		this.posY = posY;
 	}
 	
 	public int getPosX() {
@@ -33,6 +34,12 @@ public class DrawObject {
 
 	public void setRadius(int radius) {
 		this.radius = radius;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return String.format("posX = {0}, posY = {1}, radius = {2}", posX, posY, radius);
 	}
 	
 }
