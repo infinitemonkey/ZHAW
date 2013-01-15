@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import ch.zhaw.simplePhysics.PhysicsHelper;
 import ch.zhaw.windowImpl.PropertiesDialog;
 
 public class MyCanvas extends Canvas implements ICanvas {
@@ -85,8 +86,8 @@ public class MyCanvas extends Canvas implements ICanvas {
 			while (!pause) {
 				try {
 					for (IObject obj : objects) {
-						obj.setPosX((int) (obj.getPosX()+Math.round(Math.random()*4)));
-						obj.setPosY((int) (obj.getPosY()+Math.round(Math.random()*4)));
+						obj.setPosX(PhysicsHelper.calculateNewXPosition(obj.getPosX()));
+						obj.setPosY(PhysicsHelper.calculateNewYPosition(obj.getPosY()));
 				    }
 					
 					update();

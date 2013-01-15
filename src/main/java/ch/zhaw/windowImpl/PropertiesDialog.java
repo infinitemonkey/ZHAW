@@ -35,16 +35,31 @@ public class PropertiesDialog extends JFrame {
 	private void initWindow()
 	{
 		setLayout(new BorderLayout());
-		setPreferredSize(new Dimension(300, 200));
+		setPreferredSize(new Dimension(200, 110));
 		setLocation(posX, posY);
+		
+		JPanel northFrame = new JPanel();
+		northFrame.setLayout(new BorderLayout());
+		add(northFrame, BorderLayout.NORTH);
+		
+		JLabel posXlabel = new JLabel("posX");
+		northFrame.add(posXlabel, BorderLayout.WEST);
 		
 		JTextField posXinput = new JTextField();
 		posXinput.setText(posX +"");
-		add(posXinput, BorderLayout.NORTH);
+		northFrame.add(posXinput, BorderLayout.EAST);
+		
+		
+		JPanel southFrame = new JPanel();
+		southFrame.setLayout(new BorderLayout());
+		add(southFrame, BorderLayout.CENTER);
+		
+		JLabel posYlabel = new JLabel("posY");
+		southFrame.add(posYlabel, BorderLayout.WEST);
 		
 		JTextField posYinput = new JTextField();
 		posYinput.setText(posY +"");
-		add(posYinput, BorderLayout.CENTER);
+		southFrame.add(posYinput, BorderLayout.EAST);
 		
 		JButton okButton = new JButton();
 		okButton.setText("OK");
