@@ -3,7 +3,9 @@ package ch.zhaw.windowImpl;
 import javax.swing.*;
 
 import ch.zhaw.canvas.IObject;
+import ch.zhaw.canvas.IObjectFactory;
 import ch.zhaw.canvas.MyObject;
+import ch.zhaw.canvas.ObjectFactory;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -15,6 +17,8 @@ public class PropertiesDialog extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
+	IObjectFactory objectFactory;
+	
 	private int posX;
 	private int posY;
 	private int durchmesser;
@@ -28,6 +32,7 @@ public class PropertiesDialog extends JFrame {
 		this.posY = posY;
 		this.durchmesser = durchmesser;
 		this.objects = objects;
+		this.objectFactory = new ObjectFactory();
 		
 		initWindow();
 	}
@@ -66,7 +71,7 @@ public class PropertiesDialog extends JFrame {
 		okButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-						objects.add(new MyObject(Integer.parseInt(posXinput.getText()), Integer.parseInt(posYinput.getText()), durchmesser, 1000));
+						objects.add(objectFactory.createInstanceOfObject(Integer.parseInt(posXinput.getText()), Integer.parseInt(posYinput.getText()), durchmesser, 1000));
 						dispose();
 			}
 		});

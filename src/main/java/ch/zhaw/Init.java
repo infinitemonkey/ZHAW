@@ -1,10 +1,12 @@
 package ch.zhaw;
 
+import ch.zhaw.canvas.IObjectFactory;
 import ch.zhaw.canvas.MyCanvas;
 import ch.zhaw.canvas.IObject;
 import ch.zhaw.canvas.MyObject;
 import ch.zhaw.canvas.ICanvas;
 import ch.zhaw.canvas.ObjListener;
+import ch.zhaw.canvas.ObjectFactory;
 import ch.zhaw.log.Logger;
 import ch.zhaw.logImpl.ErrorLog;
 import ch.zhaw.logImpl.NoLog;
@@ -18,12 +20,14 @@ public class Init implements ObjListener{
 
 	private IWindow decoratedWindow;
 	private ICanvas canvas;
+	private IObjectFactory objectFactory;
 	
 	public Init() {
 		Logger.setLog(new SimpleLog());
 		canvas = new MyCanvas();
 		
-		IObject obj = new MyObject();
+		objectFactory = new ObjectFactory();
+		IObject obj = objectFactory.createInstanceOfObject(1, 1, 10, 100);
 		obj.setObjClickListener(this);
 		canvas.addObject(obj);
 		

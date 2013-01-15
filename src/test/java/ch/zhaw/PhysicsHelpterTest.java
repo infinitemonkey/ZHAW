@@ -11,7 +11,7 @@ import ch.zhaw.simplePhysics.PhysicsHelper;
 
 public class PhysicsHelpterTest {
 
-	MyObject obj = new MyObject();
+	IObject obj = new MyObject();
 	
 	@Before
 	public void setUp() throws Exception {
