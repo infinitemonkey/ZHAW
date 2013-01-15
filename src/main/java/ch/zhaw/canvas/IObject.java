@@ -11,4 +11,7 @@ public interface IObject {
 	public int getDurchmesser();
 
 	public void setObjClickListener(ObjListener objListener);
+	
+	public int getCharge();
+	public void setCharge(int charge);
 }

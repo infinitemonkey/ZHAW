@@ -13,4 +13,9 @@ public class PhysicsHelper {
 		int offset = oldPosition % 2 == 0 ? 3 : 5;
 		return (int) (oldPosition + offset);
 	}
+	
+	public static int calculateForce(int chargeOne, int chargeTwo)
+	{
+		return (chargeOne * chargeTwo) / 2;
+	}
 }

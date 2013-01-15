@@ -66,7 +66,7 @@ public class PropertiesDialog extends JFrame {
 		okButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-						objects.add(new MyObject(Integer.parseInt(posXinput.getText()), Integer.parseInt(posYinput.getText()), durchmesser));
+						objects.add(new MyObject(Integer.parseInt(posXinput.getText()), Integer.parseInt(posYinput.getText()), durchmesser, 1000));
 						dispose();
 			}
 		});

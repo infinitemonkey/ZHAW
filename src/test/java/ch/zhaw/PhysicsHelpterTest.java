@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import ch.zhaw.canvas.IObject;
 import ch.zhaw.canvas.MyObject;
 import ch.zhaw.simplePhysics.PhysicsHelper;
 
@@ -46,5 +47,15 @@ public class PhysicsHelpterTest {
 		int actual = PhysicsHelper.calculateNewYPosition(obj.getPosY());
 		
 		assertEquals(108, actual);
+	}
+	
+	public void testForceCalculation() {
+		obj.setCharge(100);
+		IObject obj2 = new MyObject();
+		obj2.setCharge(20);
+		
+		int actual = PhysicsHelper.calculateForce(obj.getCharge(), obj2.getCharge());
+		
+		assertEquals(1000, actual);
 	}
 }

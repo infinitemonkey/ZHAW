@@ -39,11 +39,12 @@ public class MyObjectTest extends TestCase {
     
     public void testObjectConstructor()
     {
-    	IObject obj = new MyObject(10, 20, 30);
+    	IObject obj = new MyObject(10, 20, 30, 500);
     	
     	assertEquals(10, obj.getPosX());
     	assertEquals(20, obj.getPosY());
     	assertEquals(30, obj.getDurchmesser());
+    	assertEquals(500, obj.getCharge());
     }
     
 }

@@ -7,16 +7,19 @@ public class MyObject implements IObject, ObjClickListener {
 	private int posX = 5;
 	private int posY = 5;
 	
+	private int charge = 1000;
+	
 	private int durchmesser = 10;
 
 	public MyObject() {
 		
 	}
 	
-	public MyObject(int posX, int posY, int durchmesser) {
+	public MyObject(int posX, int posY, int durchmesser, int charge) {
 		this.posX = posX;
 		this.posY = posY;
 		this.durchmesser = durchmesser;
+		this.charge = charge;
 	}
 	
 	public int getPosX() {
@@ -53,6 +56,16 @@ public class MyObject implements IObject, ObjClickListener {
 		if (objListener != null) {
 			objListener.onClick(obj);
 		}
+	}
+
+	@Override
+	public int getCharge() {
+		return this.charge;
+	}
+
+	@Override
+	public void setCharge(int charge) {
+		this.charge = charge;
 	}
 	
 }
