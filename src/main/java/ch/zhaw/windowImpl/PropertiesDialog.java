@@ -45,7 +45,7 @@ public class PropertiesDialog extends JFrame {
 		JLabel posXlabel = new JLabel("posX");
 		northFrame.add(posXlabel, BorderLayout.WEST);
 		
-		JTextField posXinput = new JTextField();
+		final JTextField posXinput = new JTextField();
 		posXinput.setText(posX +"");
 		northFrame.add(posXinput, BorderLayout.EAST);
 		
@@ -57,7 +57,7 @@ public class PropertiesDialog extends JFrame {
 		JLabel posYlabel = new JLabel("posY");
 		southFrame.add(posYlabel, BorderLayout.WEST);
 		
-		JTextField posYinput = new JTextField();
+		final JTextField posYinput = new JTextField();
 		posYinput.setText(posY +"");
 		southFrame.add(posYinput, BorderLayout.EAST);
 		
@@ -66,7 +66,7 @@ public class PropertiesDialog extends JFrame {
 		okButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-						objects.add(new MyObject(posX, posY, durchmesser));
+						objects.add(new MyObject(Integer.parseInt(posXinput.getText()), Integer.parseInt(posYinput.getText()), durchmesser));
 						dispose();
 			}
 		});
